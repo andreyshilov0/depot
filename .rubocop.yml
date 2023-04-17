@@ -1,0 +1,14 @@
+Rails:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Layout/LineLength:
+  Max: 100
+Style/Documentation:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 30
+AllCops:
+  NewCops: enable
+
+require: rubocop-rails

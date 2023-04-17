@@ -1,7 +1,7 @@
-.products{
+.products {
   margin: 0;
   padding: 0.5em;
-  a{
+  a {
     padding: 0.354em 0.5em;
     border-radius: 0.354em;
   }
@@ -20,9 +20,9 @@
   td.image {
     display: none;
 
-    @media(min-width: 30em){
+    @media (min-width: 30em) {
       display: block;
-      img{
+      img {
         height: 11.3em;
       }
     }
@@ -33,16 +33,16 @@
     }
   }
   td.actions {
-    ul{
+    ul {
       padding: 0;
       list-style: none;
-      li{
+      li {
         padding: 0.5em 0.5em;
       }
     }
   }
-  tfoot{
-    td{
+  tfoot {
+    td {
       padding: 0.5em 0;
     }
   }

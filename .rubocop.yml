@@ -8,6 +8,8 @@ Style/Documentation:
   Enabled: false
 Metrics/MethodLength:
   Max: 30
+Layout/Tab:
+  EnforcedStyle: tab
 AllCops:
   NewCops: enable
 require: rubocop-rails

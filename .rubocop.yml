@@ -3,12 +3,11 @@ Rails:
 Style/FrozenStringLiteralComment:
   Enabled: false
 Layout/LineLength:
-  Max: 100
+  Max: 120
 Style/Documentation:
   Enabled: false
 Metrics/MethodLength:
   Max: 30
 AllCops:
   NewCops: enable
-
 require: rubocop-rails

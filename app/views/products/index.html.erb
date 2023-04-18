@@ -3,7 +3,6 @@
 <% end %>
 
 <h1>Products</h1>
-
 <table>
   <tfoot>
     <tr>
@@ -16,7 +15,7 @@
   <% @products.each do |product| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td class="image">
-      <%# <%= image_tag(product.image_url, class: 'list_image')     %>
+      <%= image_tag("/images/#{product.image_url}", class: 'list_image') %>
     </td>
     <td class="description">
   <h1><%= product.title %></h1>
@@ -34,11 +33,11 @@
           product,
           method: :delete,
           data: { confirm: 'Are you sure?' } %>
-      </li>     
+      </li>
   </ul>
-  </td>
-</tr>
-<% end %>
+</td>
+  </tr>
+    <% end %>
 </tbody>
 </table>
 

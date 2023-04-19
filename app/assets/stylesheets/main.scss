@@ -3,9 +3,9 @@ body {
   padding: 0;
 }
 header.main {
-  text-align: center; // center on mobile
+  text-align: center;
   @media (min-width: 30em) {
-    text-align: left; // left align on desktop
+    text-align: left;
   }
   background: #282;
   margin: 0;
@@ -31,29 +31,29 @@ header.main {
 
   display: flex;
   display: -webkit-flex;
-  flex-direction: column; // mobile is horizontally laid out
+  flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
 
   @media (min-width: 30em) {
-    flex-direction: row; // desktop is vertically laid out
+    flex-direction: row;
     -webkit-box-orient: horizontal;
   }
 
   nav {
     padding-bottom: 1em;
     background: #141;
-    text-align: center; // mobile has centered nav
+    text-align: center;
     @media (min-width: 30em) {
-      text-align: left; // desktop nav is left-aligned
-      padding: 1em; // and needs more padding
+      text-align: left;
+      padding: 1em;
     }
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
       @media (min-width: 30em) {
-        padding-right: 1em; // give desktop some extra space
+        padding-right: 1em;
       }
       li {
         margin: 0;

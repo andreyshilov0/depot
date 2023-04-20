@@ -1,23 +1,18 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
-  # GET /products or /products.json
   def index
     @products = Product.all.order(:title)
   end
 
-  # GET /products/1 or /products/1.json
   def show; end
 
-  # GET /products/new
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
   def edit; end
 
-  # POST /products or /products.json
   def create
     @product = Product.new(product_params)
 
@@ -34,7 +29,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1 or /products/1.json
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -45,7 +39,7 @@ class ProductsController < ApplicationController
 
         @products = Product.all.order(:title)
         ActionCable.server.broadcast 'products',
-          html: render_to_string('store/index', layout: false)
+                                     html: render_to_string('store/index', layout: false)
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -53,7 +47,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1 or /products/1.json
   def destroy
     @product.destroy
 
@@ -63,14 +56,22 @@ class ProductsController < ApplicationController
     end
   end
 
+  def who_bought
+    @product = Product.find(params[:id])
+    @latest_order = @product.orders.order(:update_at).last
+    return unless stale?(@latest_order)
+
+    respond_to do |format|
+      format.atom
+    end
+  end
+
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def product_params
     params.require(:product).permit(:title, :description, :image_url, :price)
   end

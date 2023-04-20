@@ -1,7 +1,5 @@
 module ApplicationHelper
   def render_if(condition, record)
-    if condition
-      render record
+      render record if condition
     end
   end
-end

@@ -1,8 +1,7 @@
 Product.delete_all
 
-# . . .
 Product.create!(title: 'Build Chatbot Interactions',
- description:
+description:
 %(<p>
 <em>Responsive, Intuitive Interfaces with Ruby</em>
 The next step in the evolution of user interfaces is here.
@@ -18,4 +17,3 @@ skills for communicating, information, and fun.
 image_url: 'dpchat.jpg',
 price: 20.00)
 
-# . . .

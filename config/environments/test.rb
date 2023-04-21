@@ -43,13 +43,13 @@ Rails.application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings ={
-    address: "smtp.gmail.com",
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
     port: 587,
-    domain: "domain.of.sender.net",
-    authentication: "plain",
-    user_name: "dave",
-    password: "secret",
+    domain: 'domain.of.sender.net',
+    authentication: 'plain',
+    user_name: 'dave',
+    password: 'secret',
     enable_starttls_auto: true
   }
 
